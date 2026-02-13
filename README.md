@@ -18,6 +18,8 @@ stored.
 P
 ## PROGRAM - ARP
 ## server
+
+```
 import socket
 s = socket.socket()
 s.bind(('localhost', 8000))
@@ -46,9 +48,10 @@ while True:
         print(f"IP: {ip} not found in ARP table.")
         c.send("Not Found".encode())
 c.close()
-s.close()
+s.close()```
 
 ## client
+```
 import socket
 c = socket.socket()
 c.connect(('localhost', 8000))
@@ -62,7 +65,7 @@ while True:
     c.send(ip.encode())
     mac = c.recv(1024).decode()
     print(f"MAC Address for {ip}: {mac}")
-c.close()
+c.close()```
 
 
 ## OUPUT - ARP
@@ -73,6 +76,7 @@ c.close()
 
 
 ## PROGRAM - RARP
+```
 import socket
 s = socket.socket()
 s.bind(('localhost', 8000))
@@ -81,7 +85,6 @@ print("Server is listening...")
 
 c, addr = s.accept()
 print(f"Connection established with {addr}")
-
 address = {
     "165.165.80.80": "6A:08:AA:C2",
     "165.165.79.1": "8A:BC:E3:FA"
@@ -101,7 +104,7 @@ while True:
         print(f"IP: {ip} not found in ARP table.")
         c.send("Not Found".encode())
 c.close()
-s.close()
+s.close()```
 
 
 ## OUPUT -RARP
