@@ -48,7 +48,9 @@ while True:
         print(f"IP: {ip} not found in ARP table.")
         c.send("Not Found".encode())
 c.close()
-s.close()```
+s.close()
+```
+
 
 ## client
 ```
@@ -76,6 +78,8 @@ c.close()```
 
 
 ## PROGRAM - RARP
+## server
+
 ```
 import socket
 s = socket.socket()
@@ -104,8 +108,23 @@ while True:
         print(f"IP: {ip} not found in ARP table.")
         c.send("Not Found".encode())
 c.close()
-s.close()```
+s.close()
+```
+## client
+```
+import socket
+c = socket.socket()
+c.connect(('localhost', 8000))
 
+while True:
+    mac = input("Enter MAC address to find IP (or type 'exit' to quit): ")
+    if mac.lower() == "exit":  
+        break
+    c.send(mac.encode())
+    ip = c.recv(1024).decode()
+    print(f"IP Address for {mac}: {ip}")
+c.close()
+```
 
 ## OUPUT -RARP
 ## SERVER
