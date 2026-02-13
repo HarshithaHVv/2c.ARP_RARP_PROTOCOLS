@@ -19,8 +19,7 @@ P
 ## PROGRAM - ARP
 ## server
 
-```
-import socket
+```import socket
 s = socket.socket()
 s.bind(('localhost', 8000))
 s.listen(5)
@@ -53,8 +52,7 @@ s.close()
 
 
 ## client
-```
-import socket
+```import socket
 c = socket.socket()
 c.connect(('localhost', 8000))
 
@@ -81,8 +79,7 @@ c.close()
 ## PROGRAM - RARP
 ## server
 
-```
-import socket
+```import socket
 s = socket.socket()
 s.bind(('localhost', 8000))
 s.listen(5)
@@ -112,8 +109,7 @@ c.close()
 s.close()
 ```
 ## client
-```
-import socket
+```import socket
 c = socket.socket()
 c.connect(('localhost', 8000))
 
