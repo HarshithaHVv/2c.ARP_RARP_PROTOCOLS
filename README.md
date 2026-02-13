@@ -67,7 +67,8 @@ while True:
     c.send(ip.encode())
     mac = c.recv(1024).decode()
     print(f"MAC Address for {ip}: {mac}")
-c.close()```
+c.close()
+```
 
 
 ## OUPUT - ARP
